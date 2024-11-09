@@ -11,8 +11,9 @@ class EntidadSwarm():
         EntidadSwarm.siguiente_id += 1
 
     def mover(self, centro, influencia_social, pos_obstaculo, separacion):
+        print(centro[0])
         vel_x = self.velocidad[0] - influencia_social*(self.posicion[0]-centro[0]) + 0.5*random.uniform(-1, 1)
-        vel_y = self.velocidad[1] - influencia_social*(self.posicion[1]-centro[1]) + 0.5*random.uniform(1, 1)
+        vel_y = self.velocidad[1] - influencia_social*(self.posicion[1]-centro[1]) + 0.5*random.uniform(-1, 1)
 
         #si encuentra un obstáculo en separación de distancia se aplica una acaleración en sentido opuesto a donde está el obstáculo
         if(type(pos_obstaculo) != type(None)): 

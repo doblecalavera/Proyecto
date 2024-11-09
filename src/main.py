@@ -103,7 +103,7 @@ def actualizar(frame, entidades, scatter):
     scatter.set_offsets(posiciones)
     return scatter,
 
-if __name__ == '__main__':
+def testEntidad2():
     mapa = np.zeros((10, 10))
     entidades = Entidades.Entidades(mapa, 10)
 
@@ -115,3 +115,7 @@ if __name__ == '__main__':
 
     ani = animation.FuncAnimation(fig, actualizar, fargs=(entidades, scatter), interval=500, blit=False)
     plt.show()
+
+if __name__ == '__main__':
+    #testEntidad2()
+    visualizar_swarm()

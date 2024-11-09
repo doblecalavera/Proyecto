@@ -2,7 +2,7 @@
 que cuando no se aplique se vayan frenando para que se queden x tiempo parados'''
 
 import numpy as np
-import Entidad2
+import EntidadSwarm
 
 class Swarm():
     siguiente_id = 100
@@ -13,16 +13,12 @@ class Swarm():
         self.entidades = []
 
         for c in (self.coordenadas_aleatorias(numero_entidades, distancia_max)):
-            e = Entidad2.Entidad(c[0], c[1])
+            e = EntidadSwarm.EntidadSwarm(c[0], c[1])
             self.entidades.append(e)
 
         Swarm.siguiente_id += 1
 
     def mover_entidades(self, mapa):
-        for e in self.entidades: 
-            e.mover(mapa)
-
-    def mover_entidadesS(self, mapa):
         for e in self.entidades: 
             pos_obstaculo = self.obstaculo_cercano(e, mapa, 2)
             e.mover2(self.centro, 0.1, pos_obstaculo, 100)
